@@ -8,7 +8,7 @@ from backend.api.state import analysis_service, error_response, success_response
 router = APIRouter(tags=["Developer Reports"])
 
 
-@router.get("/developer-score/{repository_id}")
+@router.get("/developer-score/{repository_id:path}")
 async def developer_score(repository_id: str) -> dict:
     try:
         return success_response(analysis_service.get_developer_score(repository_id))

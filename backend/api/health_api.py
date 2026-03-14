@@ -8,7 +8,7 @@ from backend.api.state import analysis_service, error_response, success_response
 router = APIRouter(tags=["Health Reports"])
 
 
-@router.get("/repo-health/{repository_id}")
+@router.get("/repo-health/{repository_id:path}")
 async def repo_health(repository_id: str) -> dict:
     try:
         return success_response(analysis_service.get_repository_health(repository_id))

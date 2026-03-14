@@ -14,7 +14,10 @@ class HealthScoreCalculator:
         repository_context: dict,
         consensus_issues: list,
     ) -> HealthScore:
-        health_metrics = calculate_repo_health_score(consensus_issues)
+        health_metrics = calculate_repo_health_score(
+            consensus_issues,
+            repository_context.get("security_report"),
+        )
         maintainability_metrics = calculate_maintainability_index(consensus_issues)
         developer_metrics = calculate_developer_reputation(
             repository_context,

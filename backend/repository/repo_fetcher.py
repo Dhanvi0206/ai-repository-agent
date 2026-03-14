@@ -5,7 +5,6 @@ import shutil
 import subprocess
 from pathlib import Path
 
-import requests
 from git import InvalidGitRepositoryError, Repo
 
 from backend.models.response_models import RepositoryMetadata
@@ -20,6 +19,7 @@ from backend.repository.knowledge_graph import build_repository_knowledge_graph
 from backend.repository.metadata_extractor import extract_repository_metadata
 from backend.repository.repo_parser import InvalidGitHubUrlError, parse_github_url
 from backend.repository.repo_summary import generate_repository_summary
+from backend.repository.repository_validator import repository_exists
 
 
 MAX_REPO_SIZE_MB = int(os.getenv("MAX_REPO_SIZE_MB", "200"))
@@ -85,10 +85,16 @@ class RepositoryFetcher:
         if self._is_cached_repository(local_repo_path):
             return local_repo_path, True
 
-        self._validate_repository_size(owner, repo, repo_url)
-
         clone_url = f"https://github.com/{owner}/{repo}.git"
+        if not repository_exists(clone_url):
+            raise RepositoryFetchError(
+                "repository_not_found",
+                "Repository is not accessible, does not exist, or requires authentication.",
+                repo_url=repo_url,
+            )
+
         self._clone_repository(clone_url, local_repo_path, branch, repo_url)
+        self._validate_repository_size(local_repo_path, repo_url)
         return local_repo_path, False
 
     def prepare_repository_for_analysis(self, repo_url: str) -> dict:
@@ -150,41 +156,20 @@ class RepositoryFetcher:
             shutil.rmtree(local_repo_path, ignore_errors=True)
             return False
 
-    def _validate_repository_size(self, owner: str, repo: str, repo_url: str) -> None:
-        api_url = f"https://api.github.com/repos/{owner}/{repo}"
-        try:
-            response = requests.get(api_url, timeout=10)
-        except requests.RequestException as exc:
-            raise RepositoryFetchError(
-                "network_error",
-                "Failed to contact GitHub while validating repository size.",
-                repo_url=repo_url,
-                details={"error": str(exc)},
-            ) from exc
+    def _validate_repository_size(self, local_repo_path: Path, repo_url: str) -> None:
+        """Best-effort local size validation after clone to avoid blocking on GitHub API limits."""
+        repo_size_bytes = 0
+        for root, _, files in os.walk(local_repo_path):
+            for filename in files:
+                file_path = Path(root) / filename
+                try:
+                    repo_size_bytes += file_path.stat().st_size
+                except OSError:
+                    continue
 
-        if response.status_code == 404:
-            raise RepositoryFetchError(
-                "repository_not_found",
-                "Repository does not exist or is not publicly accessible.",
-                repo_url=repo_url,
-            )
-        if response.status_code == 403:
-            raise RepositoryFetchError(
-                "access_denied",
-                "GitHub denied access while validating the repository.",
-                repo_url=repo_url,
-            )
-        if not response.ok:
-            raise RepositoryFetchError(
-                "github_api_error",
-                "GitHub repository validation failed.",
-                repo_url=repo_url,
-                details={"status_code": response.status_code},
-            )
-
-        repo_size_kb = response.json().get("size", 0)
-        repo_size_mb = repo_size_kb / 1024
+        repo_size_mb = repo_size_bytes / (1024 * 1024)
         if repo_size_mb > MAX_REPO_SIZE_MB:
+            shutil.rmtree(local_repo_path, ignore_errors=True)
             raise RepositoryFetchError(
                 "repository_too_large",
                 (

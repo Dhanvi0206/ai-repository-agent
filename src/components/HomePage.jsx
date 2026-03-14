@@ -30,8 +30,7 @@ export default function HomePage() {
     setError('')
 
     try {
-      const response = await analyzeRepository(trimmedUrl)
-      const job = response.data
+      const job = await analyzeRepository(trimmedUrl)
 
       navigate('/dashboard', {
         state: {
@@ -42,7 +41,8 @@ export default function HomePage() {
         },
       })
     } catch (requestError) {
-      setError(requestError.message || 'Unable to start repository analysis.')
+      console.error('API error:', requestError)
+      setError(requestError.message || 'Repository analysis failed')
       setLoading(false)
     }
   }

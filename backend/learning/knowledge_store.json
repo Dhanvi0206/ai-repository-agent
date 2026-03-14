@@ -4,10 +4,15 @@
       "pattern": "long_function",
       "display_name": "Long Function",
       "pattern_type": "technical_debt",
-      "frequency": 48,
+      "frequency": 261,
       "severity": "medium",
       "repositories": [
-        "pallets/flask"
+        "pallets/flask",
+        "agent-development/backend",
+        "pujareddy2/visual-pattern-classifier",
+        "pujareddy2/Sih_react",
+        "pujareddy2/twilight-canvas-dev",
+        "pujareddy2/CHATBOT"
       ],
       "sample_files": [
         "examples/tutorial/flaskr/auth.py",
@@ -25,17 +30,36 @@
         "tests/type_check/typing_route.py",
         "src/flask/blueprints.py",
         "src/flask/testing.py",
-        "tests/test_cli.py"
+        "tests/test_cli.py",
+        "agents/security_agent.py",
+        "security/security_agent.py",
+        "security/security_fix_agent.py",
+        "security/test_security.py",
+        "agents/github_auth.py",
+        "agents/auto_fix_agent.py",
+        "backend/api/state.py",
+        "backend/repository/repo_fetcher.py",
+        "backend/api/routes.py",
+        "backend/orchestrator/orchestrator.py",
+        "agents/test_agents.py",
+        "backend/reporting/reporting_agent.py",
+        "app.py",
+        "src/utils/gemini.js",
+        "src/data/problemData.js",
+        "tailwind.config.ts",
+        "src/hooks/use-toast.ts",
+        "genai_services.py"
       ]
     },
     "high_complexity": {
       "pattern": "high_complexity",
       "display_name": "High Complexity",
       "pattern_type": "technical_debt",
-      "frequency": 102,
+      "frequency": 524,
       "severity": "medium",
       "repositories": [
-        "pallets/flask"
+        "pallets/flask",
+        "agent-development/backend"
       ],
       "sample_files": [
         "examples/tutorial/flaskr/auth.py",
@@ -48,17 +72,35 @@
         "src/flask/debughelpers.py",
         "src/flask/sansio/app.py",
         "src/flask/sansio/scaffold.py",
-        "src/flask/blueprints.py"
+        "src/flask/blueprints.py",
+        "security/security_agent.py",
+        "security/test_security.py",
+        "agents/github_auth.py",
+        "agents/auto_fix_agent.py",
+        "backend/api/state.py",
+        "backend/repository/repo_fetcher.py",
+        "backend/api/routes.py",
+        "backend/orchestrator/orchestrator.py",
+        "agents/test_agents.py",
+        "backend/reporting/reporting_agent.py",
+        "backend/agents/agent_debate.py",
+        "backend/agents/dependency_agent.py"
       ]
     },
     "known_repository_pattern": {
       "pattern": "known_repository_pattern",
       "display_name": "Known Repository Pattern",
       "pattern_type": "code_smell",
-      "frequency": 3,
+      "frequency": 24,
       "severity": "low",
       "repositories": [
-        "pallets/flask"
+        "pallets/flask",
+        "pujareddy2/visual-pattern-classifier",
+        "pujareddy2/Sih_react",
+        "pujareddy2/twilight-canvas-dev",
+        "pujareddy2/legal-guardian-ai-hackathon",
+        "pujareddy2/CHATBOT",
+        "Ujasvi29/Kdrama_recommendor"
       ],
       "sample_files": [
         "repository"
@@ -68,10 +110,17 @@
       "pattern": "contributor_reputation_signal",
       "display_name": "Contributor Reputation Signal",
       "pattern_type": "code_smell",
-      "frequency": 3,
+      "frequency": 25,
       "severity": "low",
       "repositories": [
-        "pallets/flask"
+        "pallets/flask",
+        "agent-development/backend",
+        "pujareddy2/visual-pattern-classifier",
+        "pujareddy2/Sih_react",
+        "pujareddy2/twilight-canvas-dev",
+        "pujareddy2/legal-guardian-ai-hackathon",
+        "pujareddy2/CHATBOT",
+        "Ujasvi29/Kdrama_recommendor"
       ],
       "sample_files": [
         "repository"
@@ -81,10 +130,12 @@
       "pattern": "missing_docstring",
       "display_name": "Missing Docstring",
       "pattern_type": "documentation_gap",
-      "frequency": 21,
+      "frequency": 122,
       "severity": "low",
       "repositories": [
-        "pallets/flask"
+        "pallets/flask",
+        "agent-development/backend",
+        "pujareddy2/CHATBOT"
       ],
       "sample_files": [
         "examples/tutorial/tests/test_auth.py",
@@ -92,17 +143,32 @@
         "tests/test_instance_config.py",
         "tests/type_check/typing_route.py",
         "examples/tutorial/tests/test_db.py",
-        "tests/test_cli.py"
+        "tests/test_cli.py",
+        "backend/agents/security_agent.py",
+        "agents/github_auth.py",
+        "backend/models/database_models.py",
+        "agents/auto_fix_agent.py",
+        "backend/api/state.py",
+        "agents/test_agents.py",
+        "backend/agents/code_quality_agent.py",
+        "backend/agents/code_review_agent.py",
+        "backend/agents/contribution_agent.py",
+        "backend/agents/dependency_agent.py",
+        "backend/agents/learning_agent.py",
+        "pages/chatbot_page.py",
+        "pages/ingest_page.py"
       ]
     },
     "weak_variable_naming": {
       "pattern": "weak_variable_naming",
       "display_name": "Weak Variable Naming",
       "pattern_type": "code_smell",
-      "frequency": 27,
+      "frequency": 138,
       "severity": "low",
       "repositories": [
-        "pallets/flask"
+        "pallets/flask",
+        "pujareddy2/visual-pattern-classifier",
+        "pujareddy2/CHATBOT"
       ],
       "sample_files": [
         "src/flask/app.py",
@@ -113,16 +179,231 @@
         "src/flask/helpers.py",
         "examples/tutorial/flaskr/db.py",
         "src/flask/sansio/app.py",
-        "src/flask/sansio/scaffold.py"
+        "src/flask/sansio/scaffold.py",
+        "app.py",
+        "genai_services.py"
+      ]
+    },
+    "hardcoded_credential": {
+      "pattern": "hardcoded_credential",
+      "display_name": "Hardcoded Credential",
+      "pattern_type": "security_vulnerability",
+      "frequency": 3,
+      "severity": "high",
+      "repositories": [
+        "agent-development/backend"
+      ],
+      "sample_files": [
+        "security/security_fix_agent.py",
+        "security/test_security.py",
+        "agents/test_agents.py"
+      ]
+    },
+    "hardcoded_api_key": {
+      "pattern": "hardcoded_api_key",
+      "display_name": "Hardcoded API Key",
+      "pattern_type": "security_vulnerability",
+      "frequency": 3,
+      "severity": "high",
+      "repositories": [
+        "agent-development/backend"
+      ],
+      "sample_files": [
+        "security/security_fix_agent.py",
+        "security/test_security.py",
+        "agents/test_agents.py"
+      ]
+    },
+    "hardcoded_jwt_secret": {
+      "pattern": "hardcoded_jwt_secret",
+      "display_name": "Hardcoded JWT Secret",
+      "pattern_type": "security_vulnerability",
+      "frequency": 2,
+      "severity": "high",
+      "repositories": [
+        "agent-development/backend"
+      ],
+      "sample_files": [
+        "security/security_fix_agent.py",
+        "agents/test_agents.py"
+      ]
+    },
+    "npm_audit_vulnerability_report": {
+      "pattern": "npm_audit_vulnerability_report",
+      "display_name": "npm audit Vulnerability Report",
+      "pattern_type": "security_vulnerability",
+      "frequency": 2,
+      "severity": "high",
+      "repositories": [
+        "pujareddy2/legal-guardian-ai-hackathon",
+        "pujareddy2/Sih_react"
+      ],
+      "sample_files": [
+        "package.json"
+      ]
+    },
+    "loosely_pinned_javascript_dependency": {
+      "pattern": "loosely_pinned_javascript_dependency",
+      "display_name": "Loosely Pinned JavaScript Dependency",
+      "pattern_type": "security_vulnerability",
+      "frequency": 2,
+      "severity": "low",
+      "repositories": [
+        "pujareddy2/legal-guardian-ai-hackathon",
+        "pujareddy2/Sih_react"
+      ],
+      "sample_files": [
+        "package.json"
+      ]
+    },
+    "potential_google_api_key": {
+      "pattern": "potential_google_api_key",
+      "display_name": "Potential Google API Key",
+      "pattern_type": "security_vulnerability",
+      "frequency": 2,
+      "severity": "high",
+      "repositories": [
+        "pujareddy2/CHATBOT"
+      ],
+      "sample_files": [
+        ".env"
+      ]
+    },
+    "missing_readme": {
+      "pattern": "missing_readme",
+      "display_name": "Missing README",
+      "pattern_type": "documentation_gap",
+      "frequency": 3,
+      "severity": "medium",
+      "repositories": [
+        "pujareddy2/CHATBOT",
+        "Ujasvi29/Kdrama_recommendor"
+      ],
+      "sample_files": [
+        "README.md"
+      ]
+    },
+    "unpinned_python_dependency": {
+      "pattern": "unpinned_python_dependency",
+      "display_name": "Unpinned Python Dependency",
+      "pattern_type": "security_vulnerability",
+      "frequency": 24,
+      "severity": "low",
+      "repositories": [
+        "pujareddy2/CHATBOT"
+      ],
+      "sample_files": [
+        "requirements.txt"
+      ]
+    },
+    "use_of_eval": {
+      "pattern": "use_of_eval",
+      "display_name": "Use of eval",
+      "pattern_type": "security_vulnerability",
+      "frequency": 7,
+      "severity": "high",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "src/flask/cli.py"
+      ]
+    },
+    "use_of_exec": {
+      "pattern": "use_of_exec",
+      "display_name": "Use of exec",
+      "pattern_type": "security_vulnerability",
+      "frequency": 7,
+      "severity": "high",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "src/flask/config.py"
+      ]
+    },
+    "weak_hash_function": {
+      "pattern": "weak_hash_function",
+      "display_name": "Weak Hash Function",
+      "pattern_type": "security_vulnerability",
+      "frequency": 7,
+      "severity": "medium",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "src/flask/sessions.py"
+      ]
+    },
+    "debug_mode_enabled": {
+      "pattern": "debug_mode_enabled",
+      "display_name": "Debug Mode Enabled",
+      "pattern_type": "security_vulnerability",
+      "frequency": 7,
+      "severity": "medium",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "src/flask/app.py"
       ]
     }
   },
   "repositories": {
     "pallets/flask": {
-      "repo_health_score": 64.75,
-      "security_score": 100.0,
+      "repo_health_score": 42.75,
+      "security_score": 45.0,
       "code_quality_score": 0.0,
       "documentation_score": 65.0,
+      "dependency_score": 100.0
+    },
+    "agent-development/backend": {
+      "repo_health_score": 20.25,
+      "security_score": 0.0,
+      "code_quality_score": 0.0,
+      "documentation_score": 35.0,
+      "dependency_score": 100.0
+    },
+    "pujareddy2/visual-pattern-classifier": {
+      "repo_health_score": 94.9,
+      "security_score": 100.0,
+      "code_quality_score": 83.0,
+      "documentation_score": 100.0,
+      "dependency_score": 100.0
+    },
+    "pujareddy2/Sih_react": {
+      "repo_health_score": 76.3,
+      "security_score": 55.75,
+      "code_quality_score": 80.0,
+      "documentation_score": 100.0,
+      "dependency_score": 100.0
+    },
+    "pujareddy2/twilight-canvas-dev": {
+      "repo_health_score": 94.0,
+      "security_score": 100.0,
+      "code_quality_score": 80.0,
+      "documentation_score": 100.0,
+      "dependency_score": 100.0
+    },
+    "pujareddy2/legal-guardian-ai-hackathon": {
+      "repo_health_score": 82.3,
+      "security_score": 55.75,
+      "code_quality_score": 100.0,
+      "documentation_score": 100.0,
+      "dependency_score": 100.0
+    },
+    "pujareddy2/CHATBOT": {
+      "repo_health_score": 65.1,
+      "security_score": 32.25,
+      "code_quality_score": 83.0,
+      "documentation_score": 82.0,
+      "dependency_score": 100.0
+    },
+    "Ujasvi29/Kdrama_recommendor": {
+      "repo_health_score": 98.8,
+      "security_score": 100.0,
+      "code_quality_score": 100.0,
+      "documentation_score": 92.0,
       "dependency_score": 100.0
     }
   }

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, HttpUrl
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field, HttpUrl
 
 from backend.models.reasoning_models import (
     AgentCritique,
@@ -16,7 +16,14 @@ class HealthResponse(BaseModel):
 
 
 class AnalyzeRepositoryRequest(BaseModel):
-    repo_url: HttpUrl = Field(..., description="GitHub repository URL to analyze")
+    model_config = ConfigDict(populate_by_name=True)
+
+    repo_url: HttpUrl = Field(
+        ...,
+        alias="repository_url",
+        validation_alias=AliasChoices("repository_url", "repo_url"),
+        description="GitHub repository URL to analyze",
+    )
 
 
 class CompareRepositoriesRequest(BaseModel):

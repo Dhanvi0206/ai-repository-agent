@@ -8,7 +8,7 @@ from backend.api.state import analysis_service, error_response, success_response
 router = APIRouter(tags=["Dependency Reports"])
 
 
-@router.get("/dependency-risk/{repository_id}")
+@router.get("/dependency-risk/{repository_id:path}")
 async def dependency_risk(repository_id: str) -> dict:
     try:
         return success_response(analysis_service.get_dependency_risk(repository_id))
