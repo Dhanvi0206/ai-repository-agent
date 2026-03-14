@@ -1,0 +1,129 @@
+{
+  "patterns": {
+    "long_function": {
+      "pattern": "long_function",
+      "display_name": "Long Function",
+      "pattern_type": "technical_debt",
+      "frequency": 48,
+      "severity": "medium",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "examples/tutorial/flaskr/auth.py",
+        "src/flask/config.py",
+        "tests/test_config.py",
+        "tests/test_instance_config.py",
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "src/flask/templating.py",
+        "src/flask/cli.py",
+        "src/flask/app.py",
+        "src/flask/debughelpers.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/scaffold.py",
+        "tests/type_check/typing_route.py",
+        "src/flask/blueprints.py",
+        "src/flask/testing.py",
+        "tests/test_cli.py"
+      ]
+    },
+    "high_complexity": {
+      "pattern": "high_complexity",
+      "display_name": "High Complexity",
+      "pattern_type": "technical_debt",
+      "frequency": 102,
+      "severity": "medium",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "examples/tutorial/flaskr/auth.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "src/flask/templating.py",
+        "src/flask/cli.py",
+        "src/flask/app.py",
+        "src/flask/debughelpers.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/blueprints.py"
+      ]
+    },
+    "known_repository_pattern": {
+      "pattern": "known_repository_pattern",
+      "display_name": "Known Repository Pattern",
+      "pattern_type": "code_smell",
+      "frequency": 3,
+      "severity": "low",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "repository"
+      ]
+    },
+    "contributor_reputation_signal": {
+      "pattern": "contributor_reputation_signal",
+      "display_name": "Contributor Reputation Signal",
+      "pattern_type": "code_smell",
+      "frequency": 3,
+      "severity": "low",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "repository"
+      ]
+    },
+    "missing_docstring": {
+      "pattern": "missing_docstring",
+      "display_name": "Missing Docstring",
+      "pattern_type": "documentation_gap",
+      "frequency": 21,
+      "severity": "low",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "examples/tutorial/tests/test_auth.py",
+        "tests/test_config.py",
+        "tests/test_instance_config.py",
+        "tests/type_check/typing_route.py",
+        "examples/tutorial/tests/test_db.py",
+        "tests/test_cli.py"
+      ]
+    },
+    "weak_variable_naming": {
+      "pattern": "weak_variable_naming",
+      "display_name": "Weak Variable Naming",
+      "pattern_type": "code_smell",
+      "frequency": 27,
+      "severity": "low",
+      "repositories": [
+        "pallets/flask"
+      ],
+      "sample_files": [
+        "src/flask/app.py",
+        "src/flask/config.py",
+        "src/flask/cli.py",
+        "tests/test_config.py",
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "examples/tutorial/flaskr/db.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/scaffold.py"
+      ]
+    }
+  },
+  "repositories": {
+    "pallets/flask": {
+      "repo_health_score": 64.75,
+      "security_score": 100.0,
+      "code_quality_score": 0.0,
+      "documentation_score": 65.0,
+      "dependency_score": 100.0
+    }
+  }
+}
