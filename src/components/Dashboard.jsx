@@ -141,7 +141,7 @@ function TopNav({ onBack }) {
         <div className="nexus-logo">N</div>
         <div>
           <div className="nexus-logo-title">
-            NEXUSAI
+            RepoGuard AI
           </div>
           <div className="nexus-logo-sub">DEVOPS INTELLIGENCE PLATFORM</div>
         </div>
@@ -533,7 +533,7 @@ export default function Dashboard() {
   const topContributor = useMemo(() => {
     const first = dashboard?.developer_insights?.top_contributors?.[0]
     return {
-      developer: renderSafe(first?.developer) || renderSafe(developer?.summary?.top_contributor) || 'Primary Maintainer',
+      developer: 'User',
       reputation_score: toSafeNumber(first?.reputation_score || developer?.summary?.developer_reputation_score, 0.65),
     }
   }, [dashboard, developer])

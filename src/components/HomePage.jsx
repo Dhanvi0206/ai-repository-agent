@@ -53,7 +53,7 @@ export default function HomePage() {
 
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
+        style={{  
           background:
             'radial-gradient(circle at top left, rgba(59,130,246,0.16), transparent 32%), radial-gradient(circle at bottom right, rgba(16,185,129,0.12), transparent 28%)',
         }}
@@ -71,9 +71,9 @@ export default function HomePage() {
           backdropFilter: 'blur(18px)',
         }}
       >
-        <p className="text-sm uppercase tracking-[0.28em] text-sky-300 mb-4">AI Repository Agent</p>
+        <p className="text-sm uppercase tracking-[0.28em] text-sky-300 mb-4">RepoGuard AI Repository Agent</p>
         <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4">
-          Connect the dashboard to live repository intelligence.
+          RepoGuard AI
         </h1>
         <p className="text-slate-300 text-lg mb-10 max-w-2xl">
           Submit any public GitHub repository and the backend will fetch it, run the agent pipeline,

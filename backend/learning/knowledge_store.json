@@ -4,7 +4,7 @@
       "pattern": "long_function",
       "display_name": "Long Function",
       "pattern_type": "technical_debt",
-      "frequency": 261,
+      "frequency": 310,
       "severity": "medium",
       "repositories": [
         "pallets/flask",
@@ -12,7 +12,8 @@
         "pujareddy2/visual-pattern-classifier",
         "pujareddy2/Sih_react",
         "pujareddy2/twilight-canvas-dev",
-        "pujareddy2/CHATBOT"
+        "pujareddy2/CHATBOT",
+        "pujareddy2/Studyplanner"
       ],
       "sample_files": [
         "examples/tutorial/flaskr/auth.py",
@@ -48,18 +49,20 @@
         "src/data/problemData.js",
         "tailwind.config.ts",
         "src/hooks/use-toast.ts",
-        "genai_services.py"
+        "genai_services.py",
+        "windows/runner/win32_window.cpp"
       ]
     },
     "high_complexity": {
       "pattern": "high_complexity",
       "display_name": "High Complexity",
       "pattern_type": "technical_debt",
-      "frequency": 524,
+      "frequency": 627,
       "severity": "medium",
       "repositories": [
         "pallets/flask",
-        "agent-development/backend"
+        "agent-development/backend",
+        "pujareddy2/Studyplanner"
       ],
       "sample_files": [
         "examples/tutorial/flaskr/auth.py",
@@ -84,14 +87,15 @@
         "agents/test_agents.py",
         "backend/reporting/reporting_agent.py",
         "backend/agents/agent_debate.py",
-        "backend/agents/dependency_agent.py"
+        "backend/agents/dependency_agent.py",
+        "windows/runner/win32_window.cpp"
       ]
     },
     "known_repository_pattern": {
       "pattern": "known_repository_pattern",
       "display_name": "Known Repository Pattern",
       "pattern_type": "code_smell",
-      "frequency": 24,
+      "frequency": 27,
       "severity": "low",
       "repositories": [
         "pallets/flask",
@@ -110,7 +114,7 @@
       "pattern": "contributor_reputation_signal",
       "display_name": "Contributor Reputation Signal",
       "pattern_type": "code_smell",
-      "frequency": 25,
+      "frequency": 29,
       "severity": "low",
       "repositories": [
         "pallets/flask",
@@ -120,7 +124,8 @@
         "pujareddy2/twilight-canvas-dev",
         "pujareddy2/legal-guardian-ai-hackathon",
         "pujareddy2/CHATBOT",
-        "Ujasvi29/Kdrama_recommendor"
+        "Ujasvi29/Kdrama_recommendor",
+        "pujareddy2/Studyplanner"
       ],
       "sample_files": [
         "repository"
@@ -130,7 +135,7 @@
       "pattern": "missing_docstring",
       "display_name": "Missing Docstring",
       "pattern_type": "documentation_gap",
-      "frequency": 122,
+      "frequency": 143,
       "severity": "low",
       "repositories": [
         "pallets/flask",
@@ -163,12 +168,13 @@
       "pattern": "weak_variable_naming",
       "display_name": "Weak Variable Naming",
       "pattern_type": "code_smell",
-      "frequency": 138,
+      "frequency": 166,
       "severity": "low",
       "repositories": [
         "pallets/flask",
         "pujareddy2/visual-pattern-classifier",
-        "pujareddy2/CHATBOT"
+        "pujareddy2/CHATBOT",
+        "pujareddy2/Studyplanner"
       ],
       "sample_files": [
         "src/flask/app.py",
@@ -181,7 +187,8 @@
         "src/flask/sansio/app.py",
         "src/flask/sansio/scaffold.py",
         "app.py",
-        "genai_services.py"
+        "genai_services.py",
+        "windows/runner/utils.cpp"
       ]
     },
     "hardcoded_credential": {
@@ -300,7 +307,7 @@
       "pattern": "use_of_eval",
       "display_name": "Use of eval",
       "pattern_type": "security_vulnerability",
-      "frequency": 7,
+      "frequency": 10,
       "severity": "high",
       "repositories": [
         "pallets/flask"
@@ -313,7 +320,7 @@
       "pattern": "use_of_exec",
       "display_name": "Use of exec",
       "pattern_type": "security_vulnerability",
-      "frequency": 7,
+      "frequency": 10,
       "severity": "high",
       "repositories": [
         "pallets/flask"
@@ -326,7 +333,7 @@
       "pattern": "weak_hash_function",
       "display_name": "Weak Hash Function",
       "pattern_type": "security_vulnerability",
-      "frequency": 7,
+      "frequency": 10,
       "severity": "medium",
       "repositories": [
         "pallets/flask"
@@ -339,7 +346,7 @@
       "pattern": "debug_mode_enabled",
       "display_name": "Debug Mode Enabled",
       "pattern_type": "security_vulnerability",
-      "frequency": 7,
+      "frequency": 10,
       "severity": "medium",
       "repositories": [
         "pallets/flask"
@@ -404,6 +411,13 @@
       "security_score": 100.0,
       "code_quality_score": 100.0,
       "documentation_score": 92.0,
+      "dependency_score": 100.0
+    },
+    "pujareddy2/Studyplanner": {
+      "repo_health_score": 91.9,
+      "security_score": 100.0,
+      "code_quality_score": 73.0,
+      "documentation_score": 100.0,
       "dependency_score": 100.0
     }
   }
