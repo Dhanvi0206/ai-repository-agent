@@ -2,7 +2,7 @@
 
 A multi-agent repository analysis and dashboard project built with a Python backend and a React frontend.
 
-This workspace contains an AI-driven repository intelligence system organized into a backend API, analysis agents, and a frontend dashboard UI.
+This workspace contains an AI-driven repository intelligence system organized into a backend API, analysis agents and a frontend dashboard UI.
 
 ## Project Overview
 
@@ -14,7 +14,7 @@ This workspace contains an AI-driven repository intelligence system organized in
 ## Key Features
 
 - AI-powered repository analysis
-- Multi-agent architecture for code quality, security, and developer intelligence
+- Multi-agent architecture for code quality, security and developer intelligence
 - Web dashboard for result visualization
 - FastAPI backend with CORS support
 
